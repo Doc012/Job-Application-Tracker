@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/JAT/frontend/css/forms.css" />
+    <!-- Include your CSS file -->
+    <script
+      src="https://kit.fontawesome.com/384885d02f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- FullCalendar and Custom Styles -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/main.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Icons (FontAwesome or Material Icons) -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+
+  <body class="sidebar-is-reduced">
+    <header class="l-header">
+      <div class="l-header__inner clearfix">
+        <div class="c-header-icon js-hamburger">
+          <div class="hamburger-toggle">
+            <span class="bar-top"></span>
+            <span class="bar-mid"></span>
+            <span class="bar-bot"></span>
+          </div>
+        </div>
+        <div class="c-header-icon has-dropdown">
+          <span class="c-badge c-badge--red c-badge--header-icon animated swing"
+            >13</span
+          >
+          <i class="fa fa-bell"></i>
+          <div class="c-dropdown c-dropdown--notifications">
+            <div class="c-dropdown__header">Notifications</div>
+            <div class="c-dropdown__content">You have new notifications!</div>
+          </div>
+        </div>
+        <div class="c-search">
+          <input
+            class="c-search__input u-input"
+            placeholder="Search..."
+            type="text"
+          />
+        </div>
+        <div class="header-icons-group">
+          <div class="c-header-icon basket">
+            <span
+              class="c-badge c-badge--blue c-badge--header-icon animated swing"
+              >4</span
+            >
+            <i class="fa-solid fa-file-pdf"></i>
+          </div>
+          <div class="c-header-icon logout">
+            <i class="fa fa-power-off" onclick="logout()"></i>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="l-sidebar">
+      <div class="logo">
+        <div class="logo__txt">JAT</div>
+      </div>
+      <div class="l-sidebar__content">
+        <nav class="c-menu js-menu">
+          <ul class="u-list">
+            <li
+              class="c-menu__item is-active"
+              data-toggle="tooltip"
+              title="Dashboard"
+            >
+              <div class="c-menu__item__inner">
+                <i class="fas fa-tachometer-alt"></i>
+                <div class="c-menu-item__title">
+                  <span>Dashboard</span>
+                </div>
+              </div>
+            </li>
+            <li
+            class="c-menu__item"
+            data-toggle="tooltip"
+            title="Applications"
+          >
+            <div class="c-menu__item__inner">
+              <i class="fas fa-file-alt"></i>
+              <a href="applications.html">
+                <div class="c-menu-item__title">
+                  <span>Applications</span>
+                </div>
+              </a>
+            </div>
+          </li>
+            <li
+              class="c-menu__item has-submenu"
+              data-toggle="tooltip"
+              title="Upcoming Interviews"
+            >
+              <div class="c-menu__item__inner">
+                <i class="fas fa-calendar-check"></i>
+                <div class="c-menu-item__title">
+                  <span>Upcoming Interviews</span>
+                </div>
+              </div>
+            </li>
+            <li
+              class="c-menu__item has-submenu"
+              data-toggle="tooltip"
+              title="Analytics"
+            >
+              <div class="c-menu__item__inner">
+                <i class="fas fa-chart-bar"></i>
+                <div class="c-menu-item__title">
+                  <span>Analytics</span>
+                </div>
+              </div>
+            </li>
+            <li
+              class="c-menu__item has-submenu"
+              data-toggle="tooltip"
+              title="Folders"
+            >
+              <div class="c-menu__item__inner">
+                <i class="fa-solid fa-folder-open"></i>
+                <div class="c-menu-item__title">
+                  <span>Folders</span>
+                </div>
+              </div>
+            </li>
+            <li
+              class="c-menu__item has-submenu"
+              data-toggle="tooltip"
+              title="Job Search Engines"
+            >
+              <div class="c-menu__item__inner">
+                <i class="fa-brands fa-searchengin"></i>
+                <div class="c-menu-item__title">
+                  <span>Job Search Engines</span>
+                </div>
+              </div>
+            </li>
+            <li
+              class="c-menu__item has-submenu"
+              data-toggle="tooltip"
+              title="Settings"
+            >
+              <div class="c-menu__item__inner">
+                <i class="fa fa-cogs"></i>
+                <div class="c-menu-item__title">
+                  <span>Settings</span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <main class="l-main">
+      <div class="content-wrapper content-wrapper--with-bg">
+        <!-- <h1 class="page-title">Dashboard</h1> -->
+        <div class="page-content" style="background-color: rgb(255, 255, 255)">
+          <!-- Responsive Containers for Stats -->
+          <div class="stats-container">
+            <div class="stat-box">
+              <h3>Total Applications</h3>
+              <p>25</p>
+            </div>
+            <div class="stat-box">
+              <h3>Sent Applications</h3>
+              <p>10</p>
+            </div>
+            <div class="stat-box">
+              <h3>Saved Applications</h3>
+              <p>15</p>
+            </div>
+            <div class="stat-box">
+              <h3>Interviews Scheduled</h3>
+              <p>3</p>
+            </div>
+            <div class="stat-box">
+              <h3>Interviewed Applications</h3>
+              <p>3</p>
+            </div>
+            <!-- <div class="stat-box">
+              <h3>Offers Received</h3>
+              <p>2</p>
+            </div> -->
+          </div>
+
+          <!-- Impressive Status Breakdown -->
+          <div class="dashboard-container">
+            <h2>Application Overview</h2>
+            <canvas id="jobApplicationsChart"></canvas>
+          </div>
+
+          <!-- <div class="donut-dashboard-container">
+            <h2>Job Application Stats Overview</h2>
+            <canvas id="jobDonutChart"></canvas>
+          </div> -->
+
+          <div class="line-chart-container">
+            <h2 style="font-size: 24px">Applications in Months</h2>
+            <canvas id="jobLineChart"></canvas>
+          </div>
+
+          <div class="job-websites">
+            <h2>Job Search Engines</h2>
+            <div class="website-container">
+              <a
+                href="https://www.linkedin.com"
+                target="_blank"
+                class="website-box"
+              >
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn</span>
+              </a>
+              <a
+                href="https://www.indeed.com"
+                target="_blank"
+                class="website-box"
+              >
+                <i class="fab fa-linkedin-in"></i> <span>Indeed</span>
+              </a>
+              <a
+                href="https://www.pnet.co.za"
+                target="_blank"
+                class="website-box"
+              >
+                <i class="fas fa-briefcase"></i>
+                <span>PNet</span>
+              </a>
+              <a
+                href="https://www.glassdoor.com"
+                target="_blank"
+                class="website-box"
+              >
+                <i class="fas fa-user-tie"></i>
+                <span>Glassdoor</span>
+              </a>
+              <a
+                href="https://www.simplyhired.com"
+                target="_blank"
+                class="website-box"
+              >
+                <i class="fas fa-search"></i>
+                <span>SimplyHired</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="accordion-container">
+            <!-- Recent Applications -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <span>Recent Applications</span>
+                <i class="icon fa fa-chevron-down"></i>
+              </h2>
+              <div class="accordion-content">
+                <ul id="recentApplicationsList">
+                  <!-- <li><span class="status-badge pending"></span></li>
+                  <li><span class="status-badge interviewed"></span></li>
+                  <li><span class="status-badge offer"></span></li> -->
+                </ul>
+                <a href="applications.html" class="view-more-btn">View More</a>
+              </div>
+            </div>
+
+            <!-- Upcoming Interviews -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <span>Upcoming Interviews</span>
+                <i class="icon fa fa-chevron-down"></i>
+              </h2>
+              <div class="accordion-content">
+                <ul id="recentInterviewsList"></ul>
+                <a href="interviews.html" class="view-more-btn">View More</a>
+              </div>
+            </div>
+
+            <!-- Recent Notes -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <span>Recent Notes</span>
+                <i class="icon fa fa-chevron-down"></i>
+              </h2>
+              <div class="accordion-content">
+                <div class="recent-item">
+                  <strong>GDG Event Platform</strong>
+                  <p>Note 1: Follow up with HR about the interview process.</p>
+                  <span class="note-date">Added: 2024-10-18</span>
+                </div>
+
+                <div class="recent-item">
+                  <strong>DEV Community</strong>
+                  <p>Note 1: Follow up with HR about the interview process.</p>
+                  <span class="note-date">Added: 2024-10-18</span>
+                </div>
+
+                <div class="recent-item">
+                  <strong>Application at Vodacom</strong>
+                  <p>Note 1: Follow up with HR about the interview process.</p>
+                  <span class="note-date">Added: 2024-10-18</span>
+                </div>
+                <a href="/notes" class="view-more">View More Notes</a>
+              </div>
+            </div>
+
+            <!-- Upcoming Reminders -->
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <span>Upcoming Reminders</span>
+                <i class="icon fa fa-chevron-down"></i>
+              </h2>
+              <div class="accordion-content">
+                <div class="recent-item">
+                  <strong>Interview Prep</strong>
+                  <p>Reminder 1: Application for Google closes in 2 days.</p>
+                  <span class="reminder-date"
+                    >Reminder set for: 2024-10-20</span
+                  >
+                </div>
+
+                <div class="recent-item">
+                  <strong>Interview Prep</strong>
+                  <p>Reminder 1: Application for Google closes in 2 days.</p>
+                  <span class="reminder-date"
+                    >Reminder set for: 2024-10-20</span
+                  >
+                </div>
+
+                <div class="recent-item">
+                  <strong>Interview Prep</strong>
+                  <p>Reminder 1: Application for Google closes in 2 days.</p>
+                  <span class="reminder-date"
+                    >Reminder set for: 2024-10-20</span
+                  >
+                </div>
+                <a href="/reminders" class="view-more">View More Reminders</a>
+              </div>
+            </div>
+          </div>
+
+          
+        </div>
+      </div>
+    </main>
+
+    <script src="/JAT/frontend/js/job.js"></script>
+    <script src="/JAT/frontend/js/dashboard.js"></script>
+  </body>
+</html>

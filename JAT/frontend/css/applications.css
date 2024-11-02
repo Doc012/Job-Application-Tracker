@@ -1,0 +1,65 @@
+.email-management-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+
+  .email-management-header {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .email-form, .email-list {
+    display: none;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+
+  .form-input {
+    margin: 1rem 0;
+  }
+
+  .email-input, .subject-input, .body-input, .attachment-input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+
+
+  .email-buttons {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .selected-email-list {
+    max-height: 100px;
+    overflow-y: auto;
+    list-style: none;
+    padding: 0;
+  }
+
+  .email-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .delete-icon {
+    cursor: pointer;
+    color: red;
+  }
+
+  
+
+  

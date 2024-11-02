@@ -1,0 +1,106 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.wrapper {
+    display: flex;
+}
+
+.sidebar {
+    background-color: #333;
+    color: white;
+    min-width: 200px;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar-menu li {
+    margin: 15px 0;
+}
+
+.sidebar-menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar-menu a:hover {
+    text-decoration: underline;
+}
+
+.page-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat-box {
+    background-color: #e3f2fd;
+    border-radius: 8px;
+    text-align: center;
+    padding: 20px;
+}
+
+.stat-box h3 {
+    margin: 0;
+}
+
+.status-breakdown {
+    margin-top: 20px;
+}
+
+.status-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.status-bar {
+    height: 10px;
+    background-color: #4caf50;
+    border-radius: 5px;
+    transition: width 0.4s;
+}
+
+.recent-applications table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.recent-applications th, .recent-applications td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.user-tips ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.user-tips li {
+    margin: 5px 0;
+}

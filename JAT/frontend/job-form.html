@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/JAT/frontend/css/forms.css"> <!-- Include your CSS file -->
+</head>
+<body class="sidebar-is-reduced">
+
+    <header class="l-header">
+        <div class="l-header__inner clearfix">
+            <div class="c-header-icon js-hamburger">
+                <div class="hamburger-toggle">
+                    <span class="bar-top"></span>
+                    <span class="bar-mid"></span>
+                    <span class="bar-bot"></span>
+                </div>
+            </div>
+            <div class="c-header-icon has-dropdown">
+                <span class="c-badge c-badge--red c-badge--header-icon animated swing">13</span>
+                <i class="fa fa-bell"></i>
+                <div class="c-dropdown c-dropdown--notifications">
+                    <div class="c-dropdown__header">Notifications</div>
+                    <div class="c-dropdown__content">You have new notifications!</div>
+                </div>
+            </div>
+            <div class="c-search">
+                <input class="c-search__input u-input" placeholder="Search..." type="text">
+            </div>
+            <div class="header-icons-group">
+                <div class="c-header-icon basket">
+                    <span class="c-badge c-badge--blue c-badge--header-icon animated swing">4</span>
+                    <i class="fa fa-shopping-basket"></i>
+                </div>
+                <div class="c-header-icon logout">
+                    <i class="fa fa-power-off"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="l-sidebar">
+        <div class="logo">
+            <div class="logo__txt">JAT</div>
+        </div>
+        <div class="l-sidebar__content">
+            <nav class="c-menu js-menu">
+                <ul class="u-list">
+                    <li class="c-menu__item is-active" data-toggle="tooltip" title="Dashboard">
+                        <div class="c-menu__item__inner">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <div class="c-menu-item__title">
+                                <span>Dashboard</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="c-menu__item has-submenu" data-toggle="tooltip" title="Applications">
+                        <div class="c-menu__item__inner">
+                            <i class="fas fa-file-alt"></i>
+                            <div class="c-menu-item__title">
+                                <span>Applications</span>
+                            </div>
+                            <div class="c-menu-item__expand js-expand-submenu">
+                                <i class="fa fa-angle-down"></i>
+                            </div>
+                        </div>
+                        <ul class="c-menu__submenu u-list">
+                            <li>Payments</li>
+                            <li>Maps</li>
+                            <li>Notifications</li>
+                        </ul>
+                    </li>
+                    <li class="c-menu__item has-submenu" data-toggle="tooltip" title="Upcoming Interviews">
+                        <div class="c-menu__item__inner">
+                            <i class="fas fa-calendar-check"></i>
+                            <div class="c-menu-item__title">
+                                <span>Upcoming Interviews</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="c-menu__item has-submenu" data-toggle="tooltip" title="Analytics">
+                        <div class="c-menu__item__inner">
+                            <i class="fas fa-chart-bar"></i>
+                            <div class="c-menu-item__title">
+                                <span>Analytics</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="c-menu__item has-submenu" data-toggle="tooltip" title="Settings">
+                        <div class="c-menu__item__inner">
+                            <i class="fa fa-cogs"></i>
+                            <div class="c-menu-item__title">
+                                <span>Settings</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <main class="l-main">
+        <div class="content-wrapper content-wrapper--with-bg">
+            <h1 class="page-title">Dashboard</h1>
+            <div class="page-content">Content goes here</div>
+        </div>
+    </main>
+
+
+    <script src="/JAT/frontend/js/job.js"></script>
+</body>
+</html>
